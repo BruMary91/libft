@@ -6,7 +6,7 @@
 /*   By: mbrunett <mbrunett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:38:35 by mbrunett          #+#    #+#             */
-/*   Updated: 2023/03/04 11:52:17 by mbrunett         ###   ########.fr       */
+/*   Updated: 2023/03/04 12:14:21 by mbrunett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[i])
 	{
 		if (i >= start && j < len)
-		{
 			str[j++] = s[i];
-		}
 		i++;
 	}
 	str[j] = 0;

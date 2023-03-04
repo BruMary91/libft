@@ -6,7 +6,7 @@
 /*   By: mbrunett <mbrunett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:26:23 by mbrunett          #+#    #+#             */
-/*   Updated: 2023/02/28 12:02:53 by mbrunett         ###   ########.fr       */
+/*   Updated: 2023/03/04 14:50:10 by mbrunett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*get_word_lenght(char const *str, int *j, char c)
 	int		i;
 	char	*temp;
 
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (str[*j] && str[*j] == c)
 		(*j)++;
@@ -34,9 +36,6 @@ char	*get_word_lenght(char const *str, int *j, char c)
 		(*j)++;
 	}
 	temp[i] = 0;
-	while (str[*j] && str[(*j)++] == c)
-	{
-	}
 	(*j)--;
 	return (temp);
 }
@@ -79,7 +78,10 @@ char	**ft_split(char const *str, char c)
 		return (0);
 	i = -1;
 	while (++i < words)
+	{
 		strs[i] = get_word_lenght(str, &j, c);
+		j++;
+	}
 	strs[words] = 0;
 	return (strs);
 }
